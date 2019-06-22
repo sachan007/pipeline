@@ -20,6 +20,7 @@ pipeline {
                 stage('Build') {
             steps {
                 sh 'mvn install'
+                publishCoverage adapters: [coberturaAdapter('/var/lib/jenkins/workspace/PublishPipeline/target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
             }
         }
     }
