@@ -14,7 +14,7 @@ pipeline {
                 stage('User input') {
             steps {
                 emailext body: 'Give response', subject: 'Give response', to: 'abhishek.sachan@mygurukulum@org'
-                input 'Do you want to proceed with further steps?'
+                input message: 'bla bla', submitter: 'sachan008'
             }
         }
                 stage('Build') {
