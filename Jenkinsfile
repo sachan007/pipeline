@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Code Stability') {
             steps {
+                sh 'cd /var/lib/jenkins/workspace/PublishPipeline/Spring3Hibernate'
                 sh 'mvn compile'
             }
         }
