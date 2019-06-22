@@ -20,7 +20,7 @@ pipeline {
                 stage('Build') {
             steps {
                 sh 'mvn install'
-                publishCoverage adapters: [coberturaAdapter('/target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
+                publishCoverage adapters: [coberturaAdapter('target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
             }
         }
     }
