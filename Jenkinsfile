@@ -8,8 +8,17 @@ pipeline {
         }
         stage('Code Stability') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/PublishPipeline'
-                sh 'mvn compile'
+                sh 'cd /var/lib/jenkins/workspace/PublishPipeline && mvn compile'
+            }
+        }
+                stage('User input') {
+            steps {
+                input 'Do you want to proceed with further steps?'
+            }
+        }
+                stage('Build') {
+            steps {
+                sh 'mvn install'
             }
         }
     }
