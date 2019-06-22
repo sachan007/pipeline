@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Code Stability') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn compile'
             }
         }
     }
