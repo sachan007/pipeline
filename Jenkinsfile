@@ -59,6 +59,7 @@ pipeline {
             }
         }
     }
+}
         post{
             success {
              slackSend iconEmoji: '', message: 'Abhishek job pass', tokenCredentialId: 'SlackOpstree', username: ''
@@ -69,5 +70,5 @@ pipeline {
         }
 
 
-}
+
 
