@@ -23,17 +23,17 @@ pipeline {
         }
         stage('Code Stability') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/PublishPipeline2 && mvn compile'
+                sh 'mvn compile'
             }
         }
         stage('Code Quality') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/PublishPipeline2 && mvn checkstyle:checkstyle'
+                sh 'mvn checkstyle:checkstyle'
             }
         }
         stage('Code Coverage') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/PublishPipeline2 && mvn cobertura:cobertura'
+                sh 'mvn cobertura:cobertura'
             }
         }
          stage('Publish Reports') {
