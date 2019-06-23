@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Slack to deploy') {
             steps {
-                slackSend iconEmoji: '', message: 'Going to deploy', tokenCredentialId: 'SlackOpstree', username: ''
+                slackSend iconEmoji: '', message: 'Abhishek is Going to deploy', tokenCredentialId: 'SlackOpstree', username: ''
             }
         }
          stage('User input to start deploy') {
