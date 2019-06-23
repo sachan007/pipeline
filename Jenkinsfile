@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Email') {
             steps {
-                emailext body: 'Going to deployment', subject: 'test', to: 'abhisheksachaneee@gmail.com'
+                mail bcc: '', body: 'Going to deploy', cc: '', from: '', replyTo: '', subject: 'to deploy', to: 'abhisheksachaneee@gmail.com'
             }
         }
         stage('Slack to deploy') {
             steps {
-                slackSend color: 'Green', iconEmoji: '', message: 'Going to deployment', username: ''
+                slackSend iconEmoji: '', message: 'Going to deploy', tokenCredentialId: 'SlackOpstree', username: ''
             }
         }
          stage('User input to start deploy') {
@@ -38,6 +38,7 @@ pipeline {
         }
          stage('Publish Reports') {
             steps {
+                findbugs canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '', unHealthy: ''
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '80'
                 publishCoverage adapters: [coberturaAdapter('target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
             }
