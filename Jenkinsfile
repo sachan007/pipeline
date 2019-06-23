@@ -55,12 +55,7 @@ pipeline {
         }
         stage('Deploy to tomcat') {
             steps {
-                sh 'cp target/Spring3HibernateApp.war /var/www/html'
+                sh 'cp target/Spring3HibernateApp.war /var/www/html
             }
         }
-         stage('Confirmation') {
-            steps {
-            slackSend iconEmoji: '', message: 'All done by abhi', tokenCredentialId: 'SlackOpstree', username: ''            }
-        }
-    }
 }
