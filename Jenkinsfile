@@ -58,5 +58,15 @@ pipeline {
                 sh 'cp target/Spring3HibernateApp.war /var/www/html'
             }
         }
+        post{
+            success {
+             slackSend iconEmoji: '', message: 'Abhishek job pass', tokenCredentialId: 'SlackOpstree', username: ''
+            }
+            falure {
+              slackSend iconEmoji: '', message: 'Abhishek job fail', tokenCredentialId: 'SlackOpstree', username: ''
+            }
+        }
+
+
 }
 }
