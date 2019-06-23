@@ -55,7 +55,7 @@ pipeline {
         }
         stage('Deploy to tomcat') {
             steps {
-                sh 'cp target/Spring3HibernateApp.war /var/www/html
+                sh 'cp target/Spring3HibernateApp.war /var/www/html'
             }
         }
 }
