@@ -4,7 +4,7 @@ pipeline {
         stage('Package name input') {
             steps {
                 input message: '', parameters: [string(defaultValue: 'git', description: '', name: 'package', trim: false)]
-                sh 'apt-get install $package'
+                sh 'sudo apt-get install $package'
             }
         }
  
