@@ -11,9 +11,16 @@ pipeline {
                 input message: 'Please select division to check', parameters: [string(defaultValue: 'First-Division', description: '', name: 'devision', trim: false)]
             }
         }
-        stage('cat') {
+        stage('csv path') {
             steps {
-                  sh 'cat /var/lib/jenkins/workspace/assign/file.csv'
+                  input message: 'Please select division to check', parameters: [string(defaultValue: '/var/lib/jenkins/workspace/assign/file.csv', description: '', name: 'csvpath', trim: false)]
+             }
+        }
+        stage('calculate') {
+            steps {
+                  sh 'cd /home/ec2-user/devScript'
+                  sh 'source script.sh'
+                  sh 'studentResult $csvpath $devision'
              }
         }
     }
