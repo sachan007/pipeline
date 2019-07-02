@@ -13,7 +13,7 @@ pipeline {
         }
         stage('cat') {
             steps {
-                  sh 'cat file.csv'
+                  sh 'cat workspace/assign/file.csv'
              }
         }
     }
