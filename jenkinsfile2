@@ -11,7 +11,7 @@ pipeline {
                 input message: 'Please select division to check', parameters: [string(defaultValue: 'First-Division', description: '', name: 'devision', trim: false)]
             }
         }
-        stage('division') {
+        stage('cat') {
             steps {
                   sh 'cat file.csv'
              }
