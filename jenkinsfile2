@@ -19,7 +19,7 @@ pipeline {
         stage('calculate') {
             steps {
                   sh 'cd /var/lib/jenkins/workspace/pipeline3'
-                  sh 'su jenkins -s /bin/bash'
+                  sh 'sudo su jenkins -s /bin/bash'
                   sh 'source script.sh'
                   sh 'studentResult $csvpath $devision'
              }
