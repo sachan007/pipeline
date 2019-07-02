@@ -18,7 +18,6 @@ pipeline {
         }
         stage('calculate') {
             steps {
-                  sh 'cd /home/ec2-user/devScript'
                   sh 'source script.sh'
                   sh 'studentResult $csvpath $devision'
              }
