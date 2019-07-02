@@ -1,11 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Clone') {
+        stage('csv upload') {
             steps {
-                sh 'echo "hello"'
+                input message: 'Please select csv file', parameters: [file(description: '', name: 'file.csv')]
             }
         }
-        
+        stage('division') {
+            steps {
+                input message: 'Please select division to check', parameters: [string(defaultValue: 'First-Division', description: '', name: 'devision', trim: false)]
+            }
+        }
+        stage('division') {
+            steps {
+                  sh 'cat file.csv'
+             }
+        }
     }
 }
