@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('calculate') {
             steps {
-                  sh 'git clone https://github.com/sachan007/terraform_final.git'
+                  sh 'https://github.com/sachan007/terraform_final.git ; git pull'
                   sh 'cd terraform_final/ninja ; sudo terraform init ; sudo terraform $action -auto-approve'
              }
         }
