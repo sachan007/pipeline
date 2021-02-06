@@ -11,11 +11,6 @@ pipeline {
                 mail bcc: '', body: 'Going to deploy', cc: '', from: '', replyTo: '', subject: 'to deploy', to: 'abhisheksachaneee@gmail.com'
             }
         }
-        stage('Slack to deploy') {
-            steps {
-                slackSend iconEmoji: '', message: 'Abhishek is Going to deploy', tokenCredentialId: 'SlackOpstree', username: ''
-            }
-        }
          stage('User input to start deploy') {
             steps {
                 input message: 'Please confirm to deploy', submitter: 'sachan007'
@@ -62,10 +57,10 @@ pipeline {
 }
         post{
             success {
-             slackSend iconEmoji: '', message: 'Abhishek job pass', tokenCredentialId: 'SlackOpstree', username: ''
+             echo 'Deploying....'
             }
             falure {
-              slackSend iconEmoji: '', message: 'Abhishek job fail', tokenCredentialId: 'SlackOpstree', username: ''
+              echo 'Deploying....'
             }
         }
 
