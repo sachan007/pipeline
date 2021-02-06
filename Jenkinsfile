@@ -32,13 +32,13 @@ pipeline {
                 sh 'mvn cobertura:cobertura'
             }
         }
-         stage('Publish Reports') {
+       /*  stage('Publish Reports') {
             steps {
                 findbugs canComputeNew: false, defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', pattern: '', unHealthy: ''
                 checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '80'
                 publishCoverage adapters: [coberturaAdapter('target/site/cobertura/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
             }
-        }
+        }*/
          stage('User input to deploy?') {
             steps {
                 input message: 'Do you want to deploy?', submitter: 'sachan007'
