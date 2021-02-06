@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Email') {
             steps {
-                mail bcc: '', body: 'Going to deploy', cc: '', from: '', replyTo: '', subject: 'to deploy', to: 'abhisheksachaneee@gmail.com'
+               // mail bcc: '', body: 'Going to deploy', cc: '', from: '', replyTo: '', subject: 'to deploy', to: 'abhisheksachaneee@gmail.com'
+                emailext body: 'Jenkins Email', subject: 'Jenkins Email', to: 'abhisheksachaneee@gmail.com'
             }
         }
          stage('User input to start deploy') {
