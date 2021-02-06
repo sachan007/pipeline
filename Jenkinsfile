@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    ansiColor('xterm') {
     stages {
         stage('Clone') {
             steps {
@@ -64,6 +65,7 @@ pipeline {
               echo 'Deploying....'
             }
         }
+      }
  }
 
 
