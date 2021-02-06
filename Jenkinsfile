@@ -55,7 +55,7 @@ pipeline {
             }
         }
     }
-}
+
         post{
             success {
              echo 'Deploying....'
@@ -64,6 +64,7 @@ pipeline {
               echo 'Deploying....'
             }
         }
+ }
 
 
 
