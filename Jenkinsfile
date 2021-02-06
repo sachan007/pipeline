@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git credentialsId: '0e342ded-c462-4c28-bbd7-9c1f2bc9c966', url: 'git@github.com:sachan007/private.git'
+                git credentialsId: 'github', url: 'git@github.com:sachan007/OT-Java-WebApp.git''
             }
         }
         stage('Email') {
