@@ -60,7 +60,7 @@ pipeline {
             success {
              echo 'Deploying....'
             }
-            falure {
+            failure {
               echo 'Deploying....'
             }
         }
